@@ -1,0 +1,24 @@
+
+<div>
+    <h1>Christopher Jacobs</h1>
+    <h2>Zoek op plaats</h2>
+    <div>
+     
+      <input type="submit" value="Find" (click)="findPlaats()"><br><br>
+      </h2>
+    </div>
+    <h2>Zoek aantal snelheids overtredingen</h2>
+    <div>
+      Aantal overtredingen: <input type="number" [(ngModel)]="snelheid"><br>
+      <input type="submit" value="Get" (click)="getAantal()"><br><br>
+      <h2 *ngFor="let item of snelheidList;">
+        datum vaststelling: {{item.datum_vaststelling}}<br>
+        opnameplaats straat: {{item.opnameplaats_straat}}<br>
+        aantal overtredingen snelheid: {{item.aantal_overtredingen_snelheid}}<br>
+        aantal overtredingen roodlicht: {{item.aantal_overtredingen_roodlicht}}<br>
+        </h2>
+  </div>
+  
+  </div>
+  
+  <router-outlet></router-outlet>

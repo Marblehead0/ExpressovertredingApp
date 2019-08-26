@@ -1,29 +1,20 @@
-
 <div>
     <h1>Christopher Jacobs</h1>
     <h2>Zoek op plaats</h2>
     <div>
-      <input type="text" [(ngModel)]="opnamePlaatsReq"><br><br>
-      <input type="submit" value="Find" (click)="findPlaats()"><br><br>
-      <h2 *ngIf="foundPlaats">
-        datum vaststelling: {{foundPlaats.datum_vaststelling}}<br>
-        opnameplaats straat: {{foundPlaats.opnameplaats_straat}}<br>
-        aantal overtredingen snelheid: {{foundPlaats.aantal_overtredingen_snelheid}}<br>
-        aantal overtredingen roodlicht: {{foundPlaats.aantal_overtredingen_roodlicht}}<br>
-      </h2>
+        <form action="/inhaal" method="GET">
+            <input type="text" placeholder="naam" name="naam">
+            <input type="submit" ><br><br>
     </div>
+    </form>
     <h2>Zoek aantal snelheids overtredingen</h2>
     <div>
-      Aantal overtredingen: <input type="number" [(ngModel)]="snelheid"><br>
-      <input type="submit" value="Get" (click)="getAantal()"><br><br>
-      <h2 *ngFor="let item of snelheidList;">
-        datum vaststelling: {{item.datum_vaststelling}}<br>
-        opnameplaats straat: {{item.opnameplaats_straat}}<br>
-        aantal overtredingen snelheid: {{item.aantal_overtredingen_snelheid}}<br>
-        aantal overtredingen roodlicht: {{item.aantal_overtredingen_roodlicht}}<br>
+        Aantal overtredingen: <input type="number" [(ngModel)]="snelheid"><br>
+        <input type="submit" value="Get" (click)="getAantal()"><br><br>
+        <h2 *ngFor="let item of snelheidList;">
         </h2>
-  </div>
-  
-  </div>
-  
-  <router-outlet></router-outlet>
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>
